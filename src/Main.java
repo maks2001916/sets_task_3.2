@@ -5,10 +5,7 @@ import java.util.Set;
 public class Main {
     public static void main(String[] args) {
         Set<String> number = new HashSet<>();
-        for (int i = 0; ; i++) {
-            if (number.size() == 15) {
-                break;
-            }
+        for (int i = 0; i < 15 ; i++) {
             Random random = new Random();
             int r = random.nextInt(9);
             int h = random.nextInt(9);
@@ -18,13 +15,13 @@ public class Main {
                 t = r;
                 y = h;
             }
-            if (!number.contains(t + "*" + y) || !number.contains(y + "*" + t)) {
+            if (!number.contains(t + "*" + y) && !number.contains(y + "*" + t)) {
                 number.add(t + "*" + y);
             }
-
         }
-        for (String nums: number)
-        System.out.println(nums);
+        for (String nums: number) {
+            System.out.println(nums);
+        }
         System.out.println(number.size());
     }
 
